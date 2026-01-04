@@ -64,7 +64,7 @@ def generate_audio(text, voice, style, api_key):
         
         # Gọi Gemini
         response = client.models.generate_content(
-            model="gemini-2.5-flash-exp", 
+            model="gemini-2.0-flash-exp", 
             contents=prompt_text,
             config=types.GenerateContentConfig(
                 response_modalities=["AUDIO"],
@@ -108,6 +108,7 @@ if st.button("🔊 Đọc Ngay", type="primary", use_container_width=True):
                 st.success("Thành công!")
             else:
                 st.error("Không nhận được âm thanh từ Gemini.")
+
 
 
 
